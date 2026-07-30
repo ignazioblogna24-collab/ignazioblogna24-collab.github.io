@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dott. Ignazio Blogna — Medico Radiologo, Alessandria</title>
+<meta name="description" content="Dott. Ignazio Blogna, medico radiologo ad Alessandria. Ecografia diagnostica e interventistica, con particolare dedizione all'apparato muscolo-scheletrico. Prenotazioni presso Ospedale Civile di Alessandria e DOT41.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b33;
+    --ink-soft:#425059;
+    --paper:#f5f2ec;
+    --paper-2:#eae4d7;
+    --white:#fffdf9;
+    --teal:#2f6f6b;
+    --teal-dark:#1f4d4a;
+    --flow-red:#b5443c;
+    --flow-blue:#2c5f86;
+    --line:rgba(28,43,51,0.14);
+    --line-strong:rgba(28,43,51,0.28);
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+
+  /* ---- top bar ---- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);
+    color:var(--paper);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .topbar-inner{
+    max-width:960px;margin:0 auto;padding:10px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .topbar-name{font-family:'Space Grotesk';font-size:15px;font-weight:600;}
+  .topbar-actions{display:flex;gap:8px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:9px 16px;
+    font-family:'IBM Plex Sans';font-weight:600;font-size:14px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn-teal{background:var(--teal);color:var(--white);}
+  .btn-teal:hover{background:var(--teal-dark);}
+  .btn-ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,0.3);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.7);}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--line-strong);}
+  .btn-outline:hover{background:var(--white);}
+  .btn-block{width:100%;justify-content:center;padding:13px 16px;font-size:15px;}
+
+  /* ---- hero ---- */
+  .hero{padding:64px 0 48px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;}
+  .eyebrow{
+    font-size:12px;color:var(--teal-dark);
+    display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal-dark);display:inline-block;}
+  .hero h1{font-size:42px;line-height:1.08;margin-bottom:6px;}
+  .hero .reg{
+    font-family:'IBM Plex Mono';font-size:12.5px;color:var(--ink-soft);
+    margin-bottom:20px;
+  }
+  .hero p.lead{font-size:17px;color:var(--ink-soft);max-width:46ch;margin-bottom:28px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
+  .hero-note{font-size:13px;color:var(--ink-soft);}
+
+  .scan{
+    width:100%;aspect-ratio:1/1;position:relative;
+  }
+  .scan svg{width:100%;height:100%;display:block;}
+
+  /* ---- section shell, styled like a report ---- */
+  section{padding:52px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
+  .sec-tag{font-size:12px;color:var(--ink-soft);}
+  .sec-head h2{font-size:26px;}
+
+  /* chi sono */
+  .bio{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+  .bio p{margin:0 0 14px;color:var(--ink-soft);}
+  .bio-facts{font-family:'IBM Plex Mono';font-size:13px;}
+  .bio-facts dt{color:var(--teal-dark);margin-top:14px;}
+  .bio-facts dt:first-child{margin-top:0;}
+  .bio-facts dd{margin:2px 0 0;color:var(--ink);}
+  .badge-msk{
+    display:inline-block;margin-top:18px;
+    font-family:'IBM Plex Mono';font-size:11.5px;
+    padding:5px 10px;border:1px solid var(--teal);color:var(--teal-dark);
+    letter-spacing:0.08em;
+  }
+
+  /* dove: due card */
+  .venues{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .venue{
+    background:var(--white);border:1px solid var(--line);padding:26px;
+  }
+  .venue h3{font-size:19px;margin-bottom:4px;}
+  .venue .venue-sub{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--teal-dark);margin-bottom:16px;display:block;}
+  .venue address{font-style:normal;color:var(--ink-soft);font-size:14.5px;margin-bottom:14px;line-height:1.6;}
+  .venue-book{border-top:1px dashed var(--line-strong);padding-top:14px;margin-top:4px;}
+  .venue-book .label{font-family:'IBM Plex Mono';font-size:11px;color:var(--ink-soft);display:block;margin-bottom:8px;}
+  .venue-book .btn{margin-right:6px;margin-bottom:6px;}
+  .todo{
+    display:block;margin-top:8px;
+    font-family:'IBM Plex Mono';font-size:11.5px;
+    background:#fff4e6;border:1px dashed #c98a2c;color:#8a5a10;
+    padding:6px 8px;
+  }
+
+  /* prestazioni */
+  details{
+    border-bottom:1px solid var(--line);
+  }
+  details:first-of-type{border-top:1px solid var(--line);}
+  summary{
+    cursor:pointer;
+    list-style:none;
+    padding:16px 4px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    font-family:'Space Grotesk';font-weight:600;font-size:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .count{
+    font-family:'IBM Plex Mono';font-weight:400;font-size:12px;color:var(--ink-soft);
+  }
+  summary::after{
+    content:"+";
+    font-family:'IBM Plex Mono';font-size:18px;color:var(--teal-dark);
+    margin-left:8px;
+  }
+  details[open] summary::after{content:"–";}
+  .exam-list{margin:0 0 18px;padding:0 4px 4px;list-style:none;}
+  .exam-list li{
+    padding:9px 0;border-top:1px solid var(--line);
+    font-size:14.5px;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:10px;
+  }
+  .exam-list li:first-child{border-top:none;}
+  .exam-only{
+    font-family:'IBM Plex Mono';font-size:10.5px;color:var(--teal-dark);
+    white-space:nowrap;align-self:flex-start;padding-top:2px;
+  }
+  .rm-note{
+    margin-top:20px;padding:14px 16px;background:var(--paper-2);
+    font-size:13.5px;color:var(--ink-soft);border-left:2px solid var(--teal);
+  }
+
+  /* prenotare */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .step{background:var(--white);border:1px solid var(--line);padding:20px;}
+  .step .mono{font-size:11px;color:var(--teal-dark);display:block;margin-bottom:10px;}
+  .step h3{font-size:16px;margin-bottom:8px;}
+  .step p{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+
+  footer{
+    background:var(--ink);color:var(--paper);padding:40px 0 30px;
+  }
+  footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;}
+  footer h4{font-family:'Space Grotesk';font-size:14px;margin-bottom:10px;color:var(--white);}
+  footer p, footer li{color:rgba(245,242,236,0.65);font-size:13px;line-height:1.7;}
+  footer ul{margin:0;padding:0;list-style:none;}
+  .legal-strip{
+    border-top:1px solid rgba(255,255,255,0.12);margin-top:28px;padding-top:18px;
+    font-size:11.5px;color:rgba(245,242,236,0.45);font-family:'IBM Plex Mono';
+  }
+
+  @media (max-width:800px){
+    .hero-grid{grid-template-columns:1fr;}
+    .scan{max-width:280px;margin:0 auto;order:-1;}
+    .hero h1{font-size:32px;}
+    .bio{grid-template-columns:1fr;}
+    .venues{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    footer .wrap{grid-template-columns:1fr;}
+    .topbar-name{font-size:13px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-name">Dott. Ignazio Blogna</span>
+    <div class="topbar-actions">
+      <a href="#prenotare" class="btn btn-ghost">Come prenotare</a>
+      <a href="tel:+3901311710984" class="btn btn-teal">Chiama il DOT41</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow mono">Medico Radiologo — Diagnostica per immagini</div>
+      <h1>Dott. Ignazio Blogna</h1>
+      <div class="reg">Iscritto all'Ordine dei Medici Chirurghi e degli Odontoiatri di Messina — n. 10980 dal 19/07/2021</div>
+      <p class="lead">Ecografia diagnostica e interventistica ad Alessandria, con particolare dedizione all'imaging muscolo-scheletrico.</p>
+      <div class="hero-ctas">
+        <a href="#prestazioni" class="btn btn-teal">Le ecografie che eseguo</a>
+        <a href="#prenotare" class="btn btn-outline">Dove prenotare</a>
+      </div>
+      <div class="hero-note">Visite presso Ospedale Civile di Alessandria e presso DOT41, Piazza della Libertà 41.</div>
+    </div>
+
+    <div class="scan" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sector" cx="50%" cy="0%" r="100%">
+            <stop offset="0%" stop-color="#3a4a52"/>
+            <stop offset="55%" stop-color="#22323b"/>
+            <stop offset="100%" stop-color="#121c22"/>
+          </radialGradient>
+          <clipPath id="fan">
+            <path d="M200 30 L 372 340 A 200 200 0 0 1 28 340 Z"/>
+          </clipPath>
+        </defs>
+        <rect x="0" y="0" width="400" height="400" fill="none"/>
+        <g clip-path="url(#fan)">
+          <rect x="0" y="0" width="400" height="400" fill="url(#sector)"/>
+          <!-- depth rings -->
+          <g stroke="rgba(245,242,236,0.08)" stroke-width="1" fill="none">
+            <circle cx="200" cy="30" r="80"/>
+            <circle cx="200" cy="30" r="160"/>
+            <circle cx="200" cy="30" r="240"/>
+            <circle cx="200" cy="30" r="320"/>
+          </g>
+          <!-- doppler flow, arterial -->
+          <path d="M120 120 C 160 180, 150 240, 190 320" stroke="#b5443c" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <path d="M120 120 C 160 180, 150 240, 190 320" stroke="#e0857c" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+          <!-- doppler flow, venous -->
+          <path d="M260 110 C 230 190, 250 250, 210 330" stroke="#2c5f86" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <path d="M260 110 C 230 190, 250 250, 210 330" stroke="#7fa8c4" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+          <!-- soft tissue speckle -->
+          <g fill="rgba(245,242,236,0.06)">
+            <circle cx="150" cy="200" r="2"/><circle cx="170" cy="260" r="1.5"/><circle cx="230" cy="180" r="2"/>
+            <circle cx="260" cy="240" r="1.5"/><circle cx="195" cy="150" r="1.5"/><circle cx="140" cy="280" r="2"/>
+            <circle cx="245" cy="300" r="1.5"/><circle cx="210" cy="220" r="1.5"/><circle cx="180" cy="330" r="2"/>
+          </g>
+        </g>
+        <path d="M200 30 L 372 340 A 200 200 0 0 1 28 340 Z" fill="none" stroke="rgba(28,43,51,0.5)" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="chi-sono">
+  <div class="wrap bio">
+    <div>
+      <div class="sec-tag mono" style="margin-bottom:10px;">Presentazione</div>
+      <h2 style="margin-bottom:16px;">Chi sono</h2>
+      <p>Medico specialista in Radiodiagnostica, formato presso l'Università del Piemonte Orientale dopo la Laurea in Medicina e Chirurgia conseguita all'Università degli Studi di Messina.</p>
+      <p>Nel percorso di formazione ho approfondito in particolare l'imaging muscolo-scheletrico, dedicandomi sia alla diagnostica sia alle tecniche interventistiche ecoguidate (infiltrazioni articolari e periarticolari), con periodi di osservazione e formazione anche presso strutture in Svizzera e Belgio.</p>
+      <span class="badge-msk">Ambito di specializzazione: Radiologia Muscolo-Scheletrica</span>
+    </div>
+    <div class="bio-facts">
+      <dl>
+        <dt>Formazione specialistica</dt>
+        <dd>Radiodiagnostica — Università del Piemonte Orientale</dd>
+        <dt>Laurea in Medicina e Chirurgia</dt>
+        <dd>Università degli Studi di Messina, 110/110 e lode</dd>
+        <dt>Iscrizione Albo</dt>
+        <dd>Ordine dei Medici di Messina, n. 10980 — dal 19/07/2021</dd>
+        <dt>Aree di attività</dt>
+        <dd>Ecografia internistica e vascolare, senologia, ecografia e infiltrazioni muscolo-scheletriche</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="prenotare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag mono">Sedi e prenotazione</div>
+        <h2>Dove trovarmi</h2>
+      </div>
+    </div>
+    <div class="venues">
+      <div class="venue">
+        <h3>Ospedale Civile di Alessandria</h3>
+        <span class="venue-sub mono">Attività istituzionale</span>
+        <address>Via Venezia — Alessandria</address>
+        <div class="venue-book">
+          <span class="label">Come prenotare</span>
+          <a href="tel:800000500" class="btn btn-outline">CUP regionale — 800.000.500</a>
+          <a href="tel:0131206872" class="btn btn-outline">Poliambulatorio Gardella — 0131 206872</a>
+          <p style="font-size:13px;color:var(--ink-soft);margin:10px 4px 0;">Poliambulatorio Gardella, Via Don Gasparolo 2: aperto al pubblico lun–ven 14:00–20:00. Telefono attivo lun–ven 14:00–16:00.</p>
+        </div>
+      </div>
+      <div class="venue">
+        <h3>DOT41</h3>
+        <span class="venue-sub mono">Libera professione — Intramoenia allargata</span>
+        <address>Piazza della Libertà, 41 — 15121 Alessandria</address>
+        <div class="venue-book">
+          <span class="label">Come prenotare — telefono o WhatsApp</span>
+          <a href="tel:+3901311710984" class="btn btn-teal">Chiama — 0131 1710984</a>
+          <a href="https://wa.me/3901311710984" class="btn btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prestazioni">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag mono">Esami disponibili</div>
+        <h2>Prestazioni ecografiche</h2>
+      </div>
+      <div class="sec-tag" style="max-width:32ch;">Salvo diversa indicazione, ogni esame è disponibile sia in Ospedale sia presso DOT41.</div>
+    </div>
+
+    <details open>
+      <summary>Muscolo-scheletrico <span class="count">— ambito di specializzazione</span></summary>
+      <ul class="exam-list">
+        <li>Ecografia muscolo-tendinea o articolare</li>
+        <li>Infiltrazione ecoguidata di sostanze terapeutiche in articolazione o legamento</li>
+        <li>Ecografia delle anche del neonato</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Addome e apparato urinario</summary>
+      <ul class="exam-list">
+        <li>Ecografia addome superiore</li>
+        <li>Ecografia addome inferiore</li>
+        <li>Ecografia addome completo</li>
+        <li>Ecografia addome completo con anse intestinali</li>
+        <li>Ecografia reno-vescicale</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Collo e ghiandole</summary>
+      <ul class="exam-list">
+        <li>Ecografia tiroide e paratiroidi</li>
+        <li>Ecografia ghiandole salivari</li>
+        <li>Ecografia del collo per linfonodi</li>
+        <li>Ecocolordoppler dei tronchi sovraortici</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Vascolare</summary>
+      <ul class="exam-list">
+        <li>Ecocolordoppler arti inferiori, arterioso e venoso</li>
+        <li>Ecocolordoppler arterie renali — studio dell'ipertensione</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Apparato genitale maschile</summary>
+      <ul class="exam-list">
+        <li>Ecografia scroto-testicolare</li>
+        <li>Ecografia del pene</li>
+        <li>Ecocolordoppler del pene con stimolo farmacologico</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Cute e tessuti molli</summary>
+      <ul class="exam-list">
+        <li>Ecografia di cute e tessuto sottocutaneo</li>
+        <li>Ecografia di cute e tessuto sottocutaneo, 2 distretti</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Senologia <span class="count">— solo presso DOT41</span></summary>
+      <ul class="exam-list">
+        <li>Ecografia mammaria bilaterale <span class="exam-only">solo DOT41</span></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Visita radiologica</summary>
+      <ul class="exam-list">
+        <li>Visita radiologica di valutazione</li>
+      </ul>
+    </details>
+
+    <div class="rm-note">In previsione, subordinatamente all'autorizzazione dell'Azienda Ospedaliera, l'attività di Risonanza Magnetica.</div>
+  </div>
+</section>
+
+<section id="come-funziona">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag mono">Percorso</div>
+        <h2>Come prenotare</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="mono">Ospedale — CUP</span>
+        <h3>CUP regionale</h3>
+        <p>Numero unico per prenotazioni in Ospedale Civile di Alessandria.</p>
+        <a href="tel:800000500" class="btn btn-outline btn-block">Chiama 800.000.500</a>
+      </div>
+      <div class="step">
+        <span class="mono">Ospedale — sportello</span>
+        <h3>Poliambulatorio Gardella</h3>
+        <p>Via Don Gasparolo 2, Alessandria. Aperto lun–ven 14:00–20:00. Info telefoniche lun–ven 14:00–16:00.</p>
+        <a href="tel:0131206872" class="btn btn-outline btn-block">Chiama 0131 206872</a>
+      </div>
+      <div class="step">
+        <span class="mono">DOT41 — libera professione</span>
+        <h3>Piazza della Libertà, 41</h3>
+        <p>Telefono o WhatsApp: il centro comunica le disponibilità.</p>
+        <a href="tel:+3901311710984" class="btn btn-outline btn-block">Chiama 0131 1710984</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Dott. Ignazio Blogna</h4>
+      <p>Medico Chirurgo specialista in Radiodiagnostica.<br>
+      Iscritto all'Ordine dei Medici di Messina, n. 10980, dal 19/07/2021.</p>
+      <p>Le informazioni contenute in questo sito hanno finalità informativa e non sostituiscono la valutazione clinica del medico curante.</p>
+    </div>
+    <div>
+      <h4>Sedi</h4>
+      <ul>
+        <li>Ospedale Civile di Alessandria — Via Venezia, Alessandria</li>
+        <li>DOT41 — Piazza della Libertà 41, 15121 Alessandria</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal-strip">
+    Comunicazione informativa sanitaria ai sensi dell'art. 1 L. 145/2018. Direttore Sanitario DOT41: Dott. Raoul Quarati.
+  </div>
+</footer>
+
+</body>
+</html>

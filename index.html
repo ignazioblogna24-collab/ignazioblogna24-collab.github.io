@@ -309,7 +309,7 @@
       <div class="venue">
         <div class="venue-body">
           <h3>Ospedale Civile di Alessandria</h3>
-          <span class="venue-sub" data-i18n="ven1.sub">Attività istituzionale</span>
+          <span class="venue-sub" data-i18n="ven1.sub">Libera professione — Intramoenia ospedaliera</span>
           <address>Via Venezia — Alessandria</address>
           <div class="venue-book">
             <span class="label" data-i18n="nav.book">Come prenotare</span>
@@ -588,7 +588,7 @@ var translations = {
     "bio.f5dd": "Italiano (madrelingua), Inglese, Francese, Portoghese",
     "ven.tag": "Sedi e prenotazione",
     "ven.title": "Dove trovarmi",
-    "ven1.sub": "Attività istituzionale",
+    "ven1.sub": "Libera professione — Intramoenia ospedaliera",
     "ven1.cup": "CUP regionale — 800.000.500",
     "ven1.gardella_btn": "Poliambulatorio Gardella — 0131 206872",
     "ven1.gardella_p": "Poliambulatorio Gardella, Via Don Gasparolo 2: aperto al pubblico lun–ven 14:00–20:00. Telefono attivo lun–ven 14:00–16:00.",
@@ -708,7 +708,7 @@ var translations = {
     "bio.f5dd": "Italian (native), English, French, Portuguese",
     "ven.tag": "Locations and booking",
     "ven.title": "Where to find me",
-    "ven1.sub": "Institutional practice",
+    "ven1.sub": "Private practice — in-hospital intramural activity",
     "ven1.cup": "Regional CUP — 800.000.500",
     "ven1.gardella_btn": "Poliambulatorio Gardella — 0131 206872",
     "ven1.gardella_p": "Poliambulatorio Gardella, Via Don Gasparolo 2: open to the public Mon–Fri 2:00 PM–8:00 PM. Phone line active Mon–Fri 2:00 PM–4:00 PM.",
@@ -828,7 +828,7 @@ var translations = {
     "bio.f5dd": "Italien (langue maternelle), anglais, français, portugais",
     "ven.tag": "Adresses et prise de rendez-vous",
     "ven.title": "Où me trouver",
-    "ven1.sub": "Activité institutionnelle",
+    "ven1.sub": "Activité libérale — intra-muros hospitalier",
     "ven1.cup": "CUP régional — 800.000.500",
     "ven1.gardella_btn": "Poliambulatorio Gardella — 0131 206872",
     "ven1.gardella_p": "Poliambulatorio Gardella, Via Don Gasparolo 2 : ouvert au public du lundi au vendredi, 14h00–20h00. Ligne téléphonique active du lundi au vendredi, 14h00–16h00.",
@@ -948,7 +948,7 @@ var translations = {
     "bio.f5dd": "Italiano (língua materna), inglês, francês, português",
     "ven.tag": "Locais e marcação",
     "ven.title": "Onde me encontrar",
-    "ven1.sub": "Atividade institucional",
+    "ven1.sub": "Prática privada — intramuros hospitalar",
     "ven1.cup": "CUP regional — 800.000.500",
     "ven1.gardella_btn": "Poliambulatorio Gardella — 0131 206872",
     "ven1.gardella_p": "Poliambulatorio Gardella, Via Don Gasparolo 2: aberto ao público de segunda a sexta, 14h00–20h00. Linha telefónica ativa de segunda a sexta, 14h00–16h00.",
@@ -1068,7 +1068,7 @@ var translations = {
     "bio.f5dd": "Italiano (lengua materna), inglés, francés, portugués",
     "ven.tag": "Sedes y reservas",
     "ven.title": "Dónde encontrarme",
-    "ven1.sub": "Actividad institucional",
+    "ven1.sub": "Consulta privada — intramuros hospitalario",
     "ven1.cup": "CUP regional — 800.000.500",
     "ven1.gardella_btn": "Poliambulatorio Gardella — 0131 206872",
     "ven1.gardella_p": "Poliambulatorio Gardella, Via Don Gasparolo 2: abierto al público de lunes a viernes, 14:00–20:00. Línea telefónica activa de lunes a viernes, 14:00–16:00.",
@@ -1183,6 +1183,7 @@ function setLang(lang){
   }
   var sel = document.getElementById('langSelect');
   if(sel){ sel.value = lang; }
+}
 
 document.addEventListener('DOMContentLoaded', function(){
   var sel = document.getElementById('langSelect');
